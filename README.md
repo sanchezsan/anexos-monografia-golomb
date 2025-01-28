@@ -1,8 +1,7 @@
 <html>
 <head>
 <!-- WRITE BETWEEN THESE TAGS THE BROWSER WINDOW TITLE DISPLAYING THIS HTML PAGE -->
-<title>MECANISMO DINÁMICO - ASIGNACIÓN DE CANALE POR REGLAS GOLOMB ÓPTIMAS</title>
-<subtitle>MATLAB_ASIGNACIONGOLOMB - Custom Component for MATLAB</subtitle>
+<title>Mecanismo Dinámico - Asignación de canales por Reglas de Golomb Óptimas</title>
 <!-- END OF BROWSER WINDOW TITLE *********************************************** -->
 
 <!-- BEGIN FONT STYLE DEFINITION SECTION - DO NOT MODIFY THESE LINES -->
@@ -45,7 +44,7 @@ MATLAB_ASIGNACIONGOLOMB (Custom Component fot MATLAB)
 
 <!-- WRITE HERE THE COMPONENT DESCRIPTION THAT APPEARS ON THE "Choose Component for MATLAB" DIALOG WINDOW - WRITE THE TEXT WITHOUT CR! -->
 <cite>
-Block MATLAB_ASIGNACIONGOLOMB: Automatically generated description
+BRRRRR Block MATLAB_ASIGNACIONGOLOMB: Automatically generated description
 </cite>
 <!-- END OF COMPONENT SHORT DESCRIPTION ********************************************************************************************** -->
 
