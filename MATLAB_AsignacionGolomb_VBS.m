@@ -101,14 +101,14 @@
 %                    Custom Component for MATLAB
 %____________________________________________________________________
 
-% Parámetros iniciales proporcionados por OptSim
-n = numeroCanales;           % Número de canales (OptSim: numeroCanales)
+% Parï¿½metros iniciales proporcionados por OptSim
+n = numeroCanales;           % Nï¿½mero de canales (OptSim: numeroCanales)
 espaciado = espaciadoCH;     % Espaciado entre canales en THz (OptSim: espaciadoCH)
 frecuenciaCentral = center_frequency; % Frecuencia central en THz (OptSim: center_frequency)
-g = zeros(1, n);             % Vector de marcas según regla de Golomb
+g = zeros(1, n);             % Vector de marcas segï¿½n regla de Golomb
 canales = zeros(1, n);       % Frecuencias asignadas
 
-% Selección de la regla de Golomb
+% Selecciï¿½n de la regla de Golomb
 switch n  % Define la regla de Golomb a implementar
     case 1
         g = 0;
@@ -168,10 +168,10 @@ switch n  % Define la regla de Golomb a implementar
         g = [0 3 15 41 66 95 97 106 142 152 220 221 225 242 295 330 338 354 382 388 402 415 486 504 523 546 553 585];
 end
 
-% Generación del plan de frecuencias
-if mod(n, 2) == 0 % Si el número de marcas es par
+% Generaciï¿½n del plan de frecuencias
+if mod(n, 2) == 0 % Si el nï¿½mero de marcas es par
     newFrec = frecuenciaCentral - g(n/2 + 1) * espaciado;
-else % Si el número de marcas es impar
+else % Si el nï¿½mero de marcas es impar
     newFrec = frecuenciaCentral - g(floor(n/2) + 1) * espaciado;
 end
 
@@ -185,28 +185,28 @@ disp(canales);
 
 %____________________________________________________________________
 %
-% Integración con el CCM para OptSim
+% Integraciï¿½n con el CCM para OptSim
 %____________________________________________________________________
 
-% Inicializar señal óptica promedio
+% Inicializar seï¿½al ï¿½ptica promedio
 opt_signal_data_avg = complex(zeros(num_samples, polarization_mode), ...
-    zeros(num_samples, polarization_mode)); % Inicialización en ceros
+    zeros(num_samples, polarization_mode)); % Inicializaciï¿½n en ceros
 
-% Combinar señales de entrada dinámicamente con las frecuencias asignadas
+% Combinar seï¿½ales de entrada dinï¿½micamente con las frecuencias asignadas
 for k = 1:n
     signal_name = sprintf('CH%d', k);
     if evalin('base', sprintf('exist(''%s'', ''var'')', signal_name))
-        signal_data = eval(signal_name); % Obtener la señal óptica
+        signal_data = eval(signal_name); % Obtener la seï¿½al ï¿½ptica
         
-        % La modulación en frecuencia se realiza multiplicando por un exponencial complejo
-        freq_shift = exp(1i * 2 * pi * canales(k) * time * 1e12); % Convertir THz a Hz
-        modulated_signal = signal_data .* freq_shift; % Modulación
+        % La modulaciï¿½n en frecuencia se realiza multiplicando por un exponencial complejo
+        freq_shift = exp(1i * 2 * pi * canales(k) * time); % Convertir THz a Hz
+        modulated_signal = signal_data .* freq_shift; % Modulaciï¿½n
         
-        % Sumar la señal modulada a la señal de salida
+        % Sumar la seï¿½al modulada a la seï¿½al de salida
         opt_signal_data_avg = opt_signal_data_avg + modulated_signal;
     end
 end
-% Asignar la señal de salida
+% Asignar la seï¿½al de salida
 OutMux = opt_signal_data_avg; % Salida del multiplexor
 
 %____________________________________________________________________
