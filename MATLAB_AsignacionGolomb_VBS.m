@@ -199,7 +199,7 @@ for k = 1:n
         signal_data = eval(signal_name); % Obtener la se�al �ptica
         
         % La modulaci�n en frecuencia se realiza multiplicando por un exponencial complejo
-        freq_shift = exp(1i * 2 * pi * canales(k) * time); % Convertir THz a Hz
+        freq_shift = exp(1i * 2 * pi * canales(k) * time); 
         modulated_signal = signal_data .* freq_shift; % Modulaci�n
         
         % Sumar la se�al modulada a la se�al de salida
@@ -208,10 +208,6 @@ for k = 1:n
 end
 % Asignar la se�al de salida
 OutMux = opt_signal_data_avg; % Salida del multiplexor
-
-%____________________________________________________________________
-% Fin del archivo
-%____________________________________________________________________
 
 %____________________________________________________________________
 %
