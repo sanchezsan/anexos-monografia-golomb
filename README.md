@@ -1,7 +1,7 @@
 <html>
 <head>
 <!-- WRITE BETWEEN THESE TAGS THE BROWSER WINDOW TITLE DISPLAYING THIS HTML PAGE -->
-<title>Mecanismo Dinámico - Asignación de canales por Reglas de Golomb Óptimas</title>
+<title>MATLAB_ASIGNACIONGOLOMB - Custom Component for MATLAB</title>
 <!-- END OF BROWSER WINDOW TITLE *********************************************** -->
 
 <!-- BEGIN FONT STYLE DEFINITION SECTION - DO NOT MODIFY THESE LINES -->
